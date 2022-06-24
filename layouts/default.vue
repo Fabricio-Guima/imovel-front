@@ -33,21 +33,17 @@
       <v-btn
         icon
         @click.stop="miniVariant = !miniVariant"
+        class="mr-2"
       >
         <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
       </v-btn>
-      <v-btn
+      <!-- <v-btn
         icon
         @click.stop="clipped = !clipped"
       >
         <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
+      </v-btn> -->
+     
       <v-toolbar-title v-text="title" />
       <v-spacer />
       <client-only>
@@ -103,25 +99,30 @@ export default {
   name: 'DefaultLayout',
   data () {
     return {
-      clipped: false,
+      clipped: true,
       drawer: false,
       fixed: false,
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
+          title: 'Home',
           to: '/'
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Inspire',
+          title: 'Favoritos',
           to: '/inspire'
+        },
+         {
+          icon: 'mdi-chart-bubble',
+          title: 'Planos',
+          to: '/planos'
         }
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'Imóveis'
     }
   },
   methods: {

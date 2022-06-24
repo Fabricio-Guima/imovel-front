@@ -74,7 +74,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
@@ -95,5 +95,14 @@ export default {
   //middleware global que roda em todas as rotas
   router: {
     middleware: "teste"
-  }
+  },
+
+  publicRuntimeConfig: {
+    STRIPE_KEY: process.env.STRIPE_KEY
+  },
+  privateRuntimeConfig: {
+
+  },
+
+
 }
