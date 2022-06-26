@@ -1,10 +1,10 @@
 <template>
   <v-card
     class="mx-auto"
-    max-width="344"
-  
+    max-width="344" 
    
   >
+  
     <v-img
       src=""
       height="200px"
