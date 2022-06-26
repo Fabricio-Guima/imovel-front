@@ -23,6 +23,7 @@
 <script>
 import {loadStripe} from "@stripe/stripe-js"
 export default {
+    middleware: "auth",
     data: ()=> ({
         planSlug: null,
         show1: false,
@@ -53,6 +54,7 @@ export default {
             } else {
                 console.log('setupIntent', setupIntent)
                 this.createSubscription(setupIntent.payment_method)
+                await this.$auth.fetchUser()
                 //enviar petição para subscrever este user
             }
         },

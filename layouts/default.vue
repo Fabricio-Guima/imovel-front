@@ -47,6 +47,7 @@
       <v-toolbar-title v-text="title" />
       <v-spacer />
       <client-only>
+        <v-btn text color="white" :to="{name: 'minha-assinatura'}">Minha assinatura</v-btn>
         <v-btn
           v-if="$auth.loggedIn"
          
@@ -117,6 +118,11 @@ export default {
           icon: 'mdi-chart-bubble',
           title: 'Planos',
           to: '/planos'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Faturas',
+          to: '/faturas'
         }
       ],
       miniVariant: false,

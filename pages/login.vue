@@ -27,7 +27,7 @@ export default {
   default: false,
   data() {
     return {
-      email: "madie78@example.net",
+      email: "stark.allene@example.net",
       password: "password",
       show1: false,
       rules: {
