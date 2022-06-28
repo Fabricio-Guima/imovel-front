@@ -76,7 +76,6 @@ export default {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: start;
   padding-top: 150px;
 }
 
@@ -85,7 +84,6 @@ export default {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: start;
   padding-top: 150px;
 }
 
