@@ -2,7 +2,12 @@
   <div>
     <h1>Login</h1>
     <v-form @submit.prevent="submit" ref="form">
-      <v-text-field v-model="email" label="E-mail" :rules="[rules.required, rules.email]"></v-text-field>
+      <v-text-field
+        v-model="email"
+        label="E-mail"
+        :rules="[rules.required, rules.email]"
+        outlined
+      ></v-text-field>
 
       <v-text-field
         v-model="password"
@@ -13,6 +18,7 @@
         hint="At least 8 characters"
         counter
         @click:append="show1 = !show1"
+        outlined
       ></v-text-field>
 
       <v-btn color="primary" type="submit"> Login </v-btn>
@@ -23,7 +29,7 @@
 <script>
 export default {
   middleware: "loggedinWithoutPermission",
-  layout: false,
+  layout: "login",
   default: false,
   data() {
     return {
@@ -34,22 +40,22 @@ export default {
         required: (value) => !!value || "Este campo é obrigatório.",
         min: (v) => v.length >= 6 || "Mínimo de 6 caracteres",
         max: (v) => v.length <= 16 || "Máximo de 16 caracteres",
-        email: (v) => /.+@.+\..+/.test(v) || "Este campo deve ser um email válido",       
+        email: (v) => /.+@.+\..+/.test(v) || "Este campo deve ser um email válido",
       },
     };
   },
   methods: {
-    async submit() {      
+    async submit() {
       let payload = {
         email: this.email,
         password: this.password,
         device_name: "my-pc",
       };
       //tudo ok? true
-    if( !this.$refs.form.validate()) {
-      console.log('campos errados')
-      return 
-    }
+      if (!this.$refs.form.validate()) {
+        console.log("campos errados");
+        return;
+      }
 
       try {
         await this.$auth.loginWith("local", {
