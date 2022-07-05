@@ -23,19 +23,21 @@
             </ul>
           </div>
 
-          <!-- <v-btn class="btn-home" :to="{ name: 'index' }" outlined color="white">
+          <v-btn class="btn-home" :to="{ name: 'cadastro' }" outlined color="white">
             <v-icon class="arrow-left-icon" small color="white darken-2">
-              mdi-arrow-left
+              mdi-arrow-right
             </v-icon>
-            <strong>Home</strong>
-          </v-btn> -->
-          <div>
+            <strong>Cadastre-se</strong>
+          </v-btn>
+          <div class="imgs">
             <img src="~/assets/icons/place.svg" class="place-img" alt="Casa" />
           </div>
         </div>
       </v-col>
       <v-col class="right-side">
         <img src="~/assets/icons/house-icon.svg" class="login-icon" />
+
+        <h2>Acessar</h2>
         <v-form class="form-login" @submit.prevent="submit" ref="form">
           <v-text-field
             class="input"
@@ -137,9 +139,10 @@ export default {
 <style>
 .container-left-side {
   display: flex;
-  flex: 1;
   flex-direction: column;
   justify-content: space-between;
+  flex: 1;
+  height: auto;
 }
 
 .texts {
@@ -168,19 +171,24 @@ export default {
   width: 250px;
   margin: 0 auto;
   position: relative;
-  border: 2px solid #fff;
 }
 
 .arrow-left-icon {
   position: absolute;
   top: 0;
-  left: -80px;
+  left: -50px;
+}
+
+.imgs {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 100%;
+  background-image: url("~/assets/icons/place.svg");
+  background-repeat: repeat-x;
 }
 
 .place-img {
-  width: 100%;
   display: block;
-  margin: 0 auto;
 }
 
 .container-login {
@@ -212,7 +220,7 @@ export default {
   flex-direction: column;
   margin: 0;
   padding: 0;
-  padding-top: 150px;
+  padding-top: 100px;
 }
 
 .login-icon {
@@ -220,6 +228,12 @@ export default {
   height: 180px;
   display: block;
   margin: 0 auto 1rem auto;
+}
+
+.right-side h2 {
+  font-size: 2rem;
+  margin: 0 auto 2rem auto;
+  color: #2962ff;
 }
 
 .v-form.form-login {
