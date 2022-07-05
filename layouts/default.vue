@@ -80,7 +80,12 @@ export default {
           to: "/",
         },
         {
-          icon: "mdi-chart-bubble",
+          icon: "mdi-home-city",
+          title: "Imóveis",
+          to: "/imoveis",
+        },
+        {
+          icon: "mdi-cards-heart",
           title: "Favoritos",
           to: "/inspire",
         },
