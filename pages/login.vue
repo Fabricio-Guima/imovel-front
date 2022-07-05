@@ -6,16 +6,32 @@
           <div class="texts">
             <h1>Imóveis</h1>
             <h3>Compre ou alugue seu tão desejado imóvel</h3>
+
+            <ul class="list">
+              <li>
+                <v-icon small color="green accent-3" class="mr-1">mdi-check</v-icon>
+                Melhores imóveis
+              </li>
+              <li>
+                <v-icon small color="green accent-3" class="mr-1">mdi-check</v-icon>Preços
+                que cabem no seu bolso
+              </li>
+              <li>
+                <v-icon small color="green accent-3" class="mr-1">mdi-check</v-icon>O site
+                que mais cresce no Brasil
+              </li>
+            </ul>
           </div>
 
-          <v-btn class="btn-home" :to="{ name: 'index' }" outlined color="white">
+          <!-- <v-btn class="btn-home" :to="{ name: 'index' }" outlined color="white">
             <v-icon class="arrow-left-icon" small color="white darken-2">
               mdi-arrow-left
             </v-icon>
             <strong>Home</strong>
-          </v-btn>
-
-          <img src="~/assets/icons/place.svg" class="place-img" alt="Casa" />
+          </v-btn> -->
+          <div>
+            <img src="~/assets/icons/place.svg" class="place-img" alt="Casa" />
+          </div>
         </div>
       </v-col>
       <v-col class="right-side">
@@ -132,7 +148,20 @@ export default {
 }
 
 .texts h1 {
-  font-size: 3rem;
+  font-size: 4rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style-type: none;
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+.list li {
+  margin-bottom: 1rem;
 }
 
 .btn-home {
@@ -152,7 +181,6 @@ export default {
   width: 100%;
   display: block;
   margin: 0 auto;
-  background-repeat: repeat-x;
 }
 
 .container-login {
@@ -173,7 +201,7 @@ export default {
   justify-content: center;
   margin: 0;
   padding: 0;
-  padding-top: 150px;
+  padding-top: 100px;
 }
 
 .right-side {
